@@ -91,7 +91,7 @@ def render
 # read configuration from site settings
   ck_config = '/assets/ckeditor_config.js'
   ck_css    = '/assets/ckeditor_css.css' 
-  ck = @parent.dc_get_site ? @parent.dc_get_site.params['ck_editor'] : nil # site might not be available yet
+  ck = @parent.dc_get_site ? @parent.dc_get_site.params['ckeditor'] : nil # site might not be available yet
   if ck
     ck_config = ck['config_file'] if ck['config_file']
     ck_css    = ck['css_file'] if ck['css_file']

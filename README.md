@@ -1,6 +1,6 @@
 # DrgDefaultHtmlEditor
 
-Default HTML editor and file manager plugin for DRG CMS. Since DRG CMS doesn't come with HTML editor. DrgDefaultHtmlEditor gem adds html_field and file_select data entry fields to DRG CMS forms.
+Default HTML editor and file manager plugin for DRG CMS. Since DRG CMS doesn't come with HTML editor, DrgDefaultHtmlEditor gem adds html_field and file_select data entry fields to DRG CMS forms.
 
 DrgDefaultHtmlEditor consists of CK editor component and EL Finder file manager component.
 
@@ -35,7 +35,7 @@ Usage in Forms:
 Optional configuration in Site document:
 ```yaml
 html_editor: ckeditor
-ck_editor:
+ckeditor:
  config_file: /files/ck_config.js
  css_file: /files/ck_css.css
 file_select: elfinder
