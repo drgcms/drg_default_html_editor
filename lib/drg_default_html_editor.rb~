@@ -1,0 +1,6 @@
+require "drg_default_html_editor/engine"
+require 'el_finder'
+require 'drg_default_html_editor/version'
+
+module DrgDefaultHtmlEditor
+end
