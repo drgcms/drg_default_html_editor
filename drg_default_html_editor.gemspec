@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.email       = ["damjan.rems@gmail.com"]
   s.homepage    = "http://www.drgcms.org"
   s.summary     = "DRG CMS: Default HTML editor and file manager plugin"
-  s.description = "DRG CMS: Default HTML editor and file manager plugin. Package includes of CK editor component and elFinder file manager component."
+  s.description = "DRG CMS: Default HTML editor and file manager plugin. Package consists of CK editor component and elFinder file manager component."
   s.license     = "MIT-LICENSE"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
