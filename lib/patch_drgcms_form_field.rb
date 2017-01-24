@@ -49,7 +49,7 @@ $('##{record}_#{@yaml['name']}').dblclick(function(){
            dialog: { width: 400, modal: true },
            lang: '#{I18n.locale}',
            getFileCallback : function(file) {
-             file = file.replace('//','/');
+//             file = file.replace('//','/');
              $('##{record}_#{@yaml['name']}').val(file);
              $('##{record}_div_#{@yaml['name']}').hide();
            },

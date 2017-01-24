@@ -47,9 +47,10 @@ $('##{record}_#{@yaml['name']}').dblclick(function(){
            docked: false,
            dialog: { width: 400, modal: true },
            lang: '#{I18n.locale}',
-           getFileCallback : function(file) {
-             file = file.replace('//','/');
-             $('##{record}_#{@yaml['name']}').val(file);
+           getFileCallback : function(files) {
+             console.log(files);
+//             file = file.replace('//','/'); 
+             $('##{record}_#{@yaml['name']}').val(files.url);
              $('##{record}_div_#{@yaml['name']}').hide();
            },
    });

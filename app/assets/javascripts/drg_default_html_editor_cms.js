@@ -8,7 +8,7 @@
 //= require drg_default_html_editor/ckeditor/ckeditor.js
 //= #require drg_default_html_editor/ckeditor/lang/sl.js
 
-//= require drg_default_html_editor/elfinder/js/elfinder.min.js
-//= require drg_default_html_editor/elfinder/js/proxy/elFinderSupportVer1.js
+//= require drg_default_html_editor/el-finder/js/elfinder.min.js
+//= require drg_default_html_editor/el-finder/js/proxy/elFinderSupportVer1.js
 
 var CKEDITOR_BASEPATH = '/assets/drg_default_html_editor/ckeditor/';
