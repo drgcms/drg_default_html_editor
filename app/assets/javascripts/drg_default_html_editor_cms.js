@@ -5,10 +5,10 @@
 // the compiled file.
 
 //= require_self
-//= require drg_default_html_editor/ckeditor/ckeditor.js
-//= #require drg_default_html_editor/ckeditor/lang/sl.js
+//= require ckeditor/ckeditor.js
+//= #require ckeditor/lang/sl.js
 
-//= require drg_default_html_editor/elfinder/js/elfinder.min.js
-//= require drg_default_html_editor/elfinder/js/proxy/elFinderSupportVer1.js
+//= require elfinder/js/elfinder.min.js
+//= require elfinder/js/proxy/elFinderSupportVer1.js
 
-var CKEDITOR_BASEPATH = '/assets/drg_default_html_editor/ckeditor/';
+var CKEDITOR_BASEPATH = '/assets/ckeditor/';
