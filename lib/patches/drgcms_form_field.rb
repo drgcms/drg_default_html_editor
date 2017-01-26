@@ -65,7 +65,7 @@ end
 # Return html url code required for FileManager icon on CMS menu.
 ###########################################################################
 def self.file_manager_url(parent)
-  url = "/assets/drg_default_html_editor/elfinder/elfinder.html?CKEditorFuncNum=1&langCode=#{I18n.locale}"
+  url = "/assets/elfinder/elfinder.html?CKEditorFuncNum=1&langCode=#{I18n.locale}"
         
   parent.link_to( parent.fa_icon('archive lg', 
                   title: parent.t('drgcms.file_manager')),
