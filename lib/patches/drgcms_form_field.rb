@@ -43,6 +43,7 @@ $('##{record}_#{@yaml['name']}').dblclick(function(){
    var f = $('##{record}_div_#{@yaml['name']}').elfinder({
            url : '/elfinder',
            transport : new elFinderSupportVer1(),
+           rememberLastDir: true,
            height: 490,
            docked: false,
            dialog: { width: 400, modal: true },
