@@ -52,7 +52,7 @@ def connector
       :user_roles => session[:user_roles]
   ).run(params)
   headers.merge!(h)
-  render (r.empty? ? {:nothing => true} : {:text => r.to_json}), :layout => false
+  render (r.empty? ? {:nothing => true} : {:plain => r.to_json}), :layout => false
 end
 
 end

@@ -65,16 +65,15 @@ def perms_for(pathname, options = {})
 # find root name and get all rules, that are for descendent of root.
 # There can be more than one root, because each site can have its own root
     root = pathname.root.to_s.sub(Rails.root.join('public').to_s,'')
-    DcFolderPermission.where(folder_name: /#{root}*/).sort(folder_name: 1).each do |p|
-      folder = p.folder_name.sub(root,'')
+    DcFolderPermission.where(folder_name: /#{root}*/).sort(folder_name: 1).each do |permission|
+      folder = permission.folder_name.sub(root,'')
+      folder.gsub!(/^\/|\/$/, '')
 # root is always ., remove leading and trailing /
       folder = '.' if folder.blank?
-      folder = folder[1..-1] if folder[0] == '/'
-      folder = folder[0..-2] if folder[-1] == '/'
 # no rights by default. 
-      h = {read: false, write: false, rw: false, inherited: p.inherited}
+      h = {read: false, write: false, rw: false, inherited: permission.inherited}
 # go through policy_rules and set rights if role matches rules role 
-      p.dc_policy_rules.each do |r|
+      permission.dc_policy_rules.each do |r|
         @options[:user_roles].each do |role|
           next unless role == r.dc_policy_role_id
           h[:read]  ||= r.permission > 0
