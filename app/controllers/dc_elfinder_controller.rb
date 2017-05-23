@@ -28,7 +28,7 @@
 
 class DcElfinderController < DcApplicationController
 
-skip_before_filter :verify_authenticity_token # otherwise it fails on post because of protect_from_forgery
+skip_before_action :verify_authenticity_token # otherwise it fails on post because of protect_from_forgery
 ##########################################################################
 # elfinder file manager connector
 ##########################################################################
