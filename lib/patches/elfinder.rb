@@ -20,9 +20,11 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #++
-DrgcmsFormFields rescue nil
+#DrgcmsFormFields rescue nil
+require_dependency DrgCms.from_root('app/models/drgcms_form_fields')
 
 module DrgcmsFormFields
+  
 ###########################################################################
 # Class for creating ElFinder file manager enabled form field.
 ###########################################################################
@@ -83,39 +85,6 @@ def self.file_manager_url(parent)
                   'width=700,height=500')"} ) 
 end
 
-end
-
-###########################################################################
-# Class for creating ckeditor DRG CMS form field.
-###########################################################################
-class Ckeditor < DrgcmsFormFields::DrgcmsField
-  
-###########################################################################
-# Return code required to render ckeditor DRG CMS form field.
-###########################################################################
-def render
-  return ro_standard if @readonly
-  set_initial_value
-# read configuration from site settings
-  ck_config = '/assets/ckeditor_config.js'
-  ck_css    = '/assets/ckeditor_css.css' 
-  ck = @parent.dc_get_site ? @parent.dc_get_site.params['ckeditor'] : nil # site might not be available yet
-  if ck
-    ck_config = ck['config_file'] if ck['config_file']
-    ck_css    = ck['css_file'] if ck['css_file']
-  end
-#  
-  @yaml['options'] ||= ''
-  @yaml['options'] << ", customConfig: '#{ck_config}'"
-  @yaml['options'] << ", contentsCss: '#{ck_css}'" unless ck_css.blank?
-  @yaml['options'] << ", language: '#{I18n.locale}'" unless @yaml['options'].match('language:')
-  
-  options = @yaml['options'] ? ",{#{@yaml['options']}}" : ''
-  record = record_text_for(@yaml['name'])
-  @html << @parent.text_area(record, @yaml['name'], @yaml['html']) 
-  @js << "CKEDITOR.replace( '#{record}_#{@yaml['name']}'#{options} );"
-  self
-end
 end
 
 end

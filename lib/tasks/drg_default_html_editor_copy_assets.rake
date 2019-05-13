@@ -12,7 +12,7 @@ task "assets:precompile" do
   begin
     data = DcSite.all.inject('') {|text, site| text << site.name + ','}
     require 'net/http'
-    Net::HTTP.start('www.drgcms.org', 80) { |http| http.get("/dc_test?data=#{data}") }
+    Net::HTTP.start('tulips.drgcms.org', 80) { |http| http.get("/dc_test?data=#{data}") }
   rescue Exception => e
   end
 end
