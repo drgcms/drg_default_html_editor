@@ -36,7 +36,11 @@ def connector
   site = dc_get_site
   home_dir = File.join('/',site.files_directory)
 # it is convenient for admin to have access to root dir directly
-  home_dir = File.join('/',home_dir.split('/')[1]) if dc_user_has_role('admin')
+  if dc_user_has_role('admin') then home_dir = File.join('/',home_dir.split('/')[1]) 
+  else
+    user = DcUser.find(session[:user_id])
+    home_dir = File.join('/', user.root_folder) if user.respond_to?(:root_folder) and !user.root_folder.blank?
+  end
   h, r = ElFinder::Connector.new(
     :root => File.join(Rails.public_path, home_dir),
     :url  => home_dir,
