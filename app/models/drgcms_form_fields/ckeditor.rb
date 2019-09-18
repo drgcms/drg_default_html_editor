@@ -20,8 +20,6 @@
 # OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
 # WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 #++
-#DrgcmsFormFields rescue nil
-require_dependency DrgCms.from_root('app/models/drgcms_form_fields')
 
 module DrgcmsFormFields
   
