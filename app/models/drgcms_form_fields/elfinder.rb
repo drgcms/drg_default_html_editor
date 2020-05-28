@@ -61,7 +61,7 @@ EOJS
   unless @record[@yaml['name']].blank? or @parent.dc_dont?(@yaml['preview'], false)
     @html << 
 %Q[<span class="dc-image-preview">
-#{@parent.image_tag(@record[@yaml['name']], title: t('drgcms.img_large') ) unless @record[@yaml['name']].match('<i ')}
+#{(@parent.image_tag(@record[@yaml['name']], title: t('drgcms.img_large') ) unless @record[@yaml['name']].match('<i ')) rescue ''}
 </span><div id="dc-image-preview"></div>]
   end  
   @html << "<div id='#{record}_div_#{@yaml['name']}'></div>"        
