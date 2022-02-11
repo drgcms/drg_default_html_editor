@@ -75,7 +75,7 @@ end
 def self.file_manager_url(parent)
   url = "/assets/elfinder/elfinder.html?CKEditorFuncNum=1&langCode=#{I18n.locale}"
         
-  parent.link_to( parent.fa_icon('archive lg', 
+  parent.link_to( parent.fa_icon('archive-o',
                   title: parent.t('drgcms.file_manager')),
                   '#',
                  { onclick: "window.open('#{url}', 
