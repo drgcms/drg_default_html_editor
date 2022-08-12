@@ -6,9 +6,6 @@
 
 //= require_self
 //= require ckeditor/ckeditor.js
-//= #require ckeditor/lang/sl.js
-
-//= require elfinder/js/elfinder.min.js
-//= require elfinder/js/proxy/elFinderSupportVer1.js
+//= require drg_elfinder.js
 
 var CKEDITOR_BASEPATH = '/assets/ckeditor/';

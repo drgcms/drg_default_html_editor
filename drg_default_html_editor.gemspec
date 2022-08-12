@@ -9,15 +9,15 @@ Gem::Specification.new do |s|
   s.version     = DrgDefaultHtmlEditor::VERSION
   s.authors     = ["Damjan Rems"]
   s.email       = ["damjan.rems@gmail.com"]
-  s.homepage    = "http://www.drgcms.org"
+  s.homepage    = "https://www.drgcms.org"
   s.summary     = "DRG CMS: Default HTML editor and file manager plugin"
   s.description = "DRG CMS: Default HTML editor and file manager plugin. Package consists of CK editor component and elFinder file manager component."
-  s.license     = "MIT-LICENSE"
+  s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*"] + ["MIT-LICENSE", "Rakefile", "README.md"]
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "> 6"
-  s.add_dependency "el_finder"  
   s.add_dependency "drg_cms", "> 0.6"
+  s.add_dependency "drg_elfinder"
 end

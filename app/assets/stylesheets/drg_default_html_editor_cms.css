@@ -8,8 +8,8 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require elfinder/css/elfinder.min.css
- *= require elfinder/css/theme.css
+ *= #require elfinder/css/elfinder.min.css
+ *= #require elfinder/css/theme.css
 */
 
 
@@ -18,4 +18,4 @@
   Don't forget to update elfinder.min.css and replace all occurences of ../img/ with /assets/elfinder/
   and copy elfinder/img to images/elfinder folder. 
 
-*/   
+*/

@@ -33,28 +33,27 @@ class Ckeditor < DrgcmsField
 ###########################################################################
 def render
   return ro_standard if @readonly
+
   set_initial_value
-# read configuration from site settings
+  # read configuration from site settings
   ck_config = '/assets/ckeditor_config.js'
-  ck_css    = '/assets/ckeditor_css.css' 
+  ck_css    = '/assets/ckeditor_css.css'
   ck = @parent.dc_get_site ? @parent.dc_get_site.params['ckeditor'] : nil # site might not be available yet
   if ck
     ck_config = ck['config_file'] if ck['config_file']
     ck_css    = ck['css_file'] if ck['css_file']
   end
-#  
-  @yaml['options'] ||= ''
-  @yaml['options'] << ", customConfig: '#{ck_config}'"
-  @yaml['options'] << ", contentsCss: '#{ck_css}'" unless ck_css.blank?
-  @yaml['options'] << ", language: '#{I18n.locale}'" unless @yaml['options'].match('language:')
-  
-  options = @yaml['options'] ? ",{#{@yaml['options']}}" : ''
+
+  options = options_to_hash(@yaml['options'])
+  options['customConfig'] = ck_config
+  options['contentsCss']  = ck_css
+  options['language'] ||= I18n.locale
+
   record = record_text_for(@yaml['name'])
-  @html << @parent.text_area(record, @yaml['name'], @yaml['html']) 
-  @js << "CKEDITOR.replace( '#{record}_#{@yaml['name']}'#{options} );"
+  @html << @parent.text_area(record, @yaml['name'], @yaml['html'])
+  @js << "CKEDITOR.replace( '#{record}_#{@yaml['name']}', #{options.to_json} );"
   self
 end
-end
 
 end
-
+end

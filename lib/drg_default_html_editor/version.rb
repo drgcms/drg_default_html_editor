@@ -1,3 +1,3 @@
 module DrgDefaultHtmlEditor
-  VERSION = "0.6.1.1"
+  VERSION = "0.7.0.2"
 end
