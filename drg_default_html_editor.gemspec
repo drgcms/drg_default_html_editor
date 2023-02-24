@@ -18,6 +18,5 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "> 6"
-  s.add_dependency "drg_cms", "> 0.6"
   s.add_dependency "drg_elfinder"
 end
